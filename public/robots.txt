@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://subankar-dey.github.io/personal-portfolio/sitemap.xml

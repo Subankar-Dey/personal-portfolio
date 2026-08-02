@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* DESIGN SYSTEM: personal-portfolio v1.0 (Glassmorphism Theme) */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #020617; /* Root Slate 950 */
+      color: #f8fafc;
+      font-family: 'Inter', -apple-system, system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .email-container {
+      max-width: 650px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    /* Ambient Glow Backgrounds mimicking the blur-3xl divs */
+    .glow-wrapper {
+      position: relative;
+      border-radius: 24px;
+      background: #0B0E16;
+      background-image: radial-gradient(circle at top right, rgba(32, 178, 166, 0.15) 0%, transparent 40%),
+                        radial-gradient(circle at bottom left, rgba(79, 209, 197, 0.1) 0%, transparent 40%);
+      padding: 1px; /* Subtle outer border effect */
+    }
+
+    /* Main Glass Card */
+    .glass-card {
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(32, 178, 166, 0.2);
+      border-radius: 23px;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+
+    .header {
+      padding: 40px 40px 20px 40px;
+      text-align: center;
+    }
+
+    /* Custom Logo from the portfolio */
+    .logo-container {
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      background: rgba(32, 178, 166, 0.1);
+      border: 1px solid rgba(32, 178, 166, 0.3);
+      line-height: 60px;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: 800;
+      color: #20b2a6; /* Theme Accent */
+      text-decoration: none;
+    }
+
+    .content {
+      padding: 0 40px 40px 40px;
+    }
+
+    .title {
+      font-size: 28px;
+      font-weight: 700;
+      margin: 0 0 8px 0;
+      color: #ffffff;
+      text-align: center;
+      letter-spacing: -0.5px;
+    }
+
+    .subtitle {
+      font-size: 15px;
+      color: #94a3b8;
+      text-align: center;
+      margin: 0 0 40px 0;
+    }
+
+    /* Glass Info Grid */
+    .info-grid {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 32px;
+    }
+
+    .info-item {
+      margin-bottom: 20px;
+    }
+    .info-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #64748b;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .value {
+      font-size: 17px;
+      color: #f8fafc;
+      font-weight: 500;
+      word-break: break-all;
+    }
+
+    /* Accented Message Box */
+    .message-box {
+      background: rgba(32, 178, 166, 0.03);
+      border-left: 4px solid #20b2a6;
+      padding: 28px;
+      border-radius: 0 16px 16px 0;
+    }
+
+    .message-text {
+      color: #cbd5e1;
+      font-size: 16px;
+      line-height: 1.7;
+      margin: 0;
+      white-space: pre-wrap;
+      font-style: italic;
+    }
+
+    /* Primary Action CTA */
+    .action-container {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 16px 40px;
+      background: #20b2a6;
+      color: #020617 !important;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      border-radius: 50px;
+      box-shadow: 0 10px 25px -5px rgba(32, 178, 166, 0.3);
+      transition: opacity 0.2s;
+    }
+
+    .footer {
+      padding: 30px;
+      text-align: center;
+      color: #475569;
+      font-size: 13px;
+      background: rgba(2, 6, 23, 0.4);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <div class="glow-wrapper">
+      <div class="glass-card">
+        
+        <div class="header">
+          <div class="logo-container">
+            <span class="logo">SD</span>
+          </div>
+          <h1 class="title">New Message Received</h1>
+          <p class="subtitle">Someone wants to connect through your portfolio.</p>
+        </div>
+
+        <div class="content">
+          <div class="info-grid">
+            <div class="info-item">
+              <span class="label">Sender Name</span>
+              <span class="value">{{name}}</span>
+            </div>
+            <div class="info-item">
+              <span class="label">Sender Email</span>
+              <span class="value">{{email}}</span>
+            </div>
+          </div>
+
+          <span class="label" style="margin-left: 4px; margin-bottom: 12px;">Message:</span>
+          <div class="message-box">
+            <p class="message-text">"{{message}}"</p>
+          </div>
+
+          <div class="action-container">
+            <a href="mailto:{{email}}" class="btn">Reply to {{name}}</a>
+          </div>
+        </div>
+
+        <div class="footer">
+          &copy; Subankar Dey &bull; Automated Portfolio Alert
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
