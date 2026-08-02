@@ -6,6 +6,8 @@ This portfolio acts as a living resume while I pursue my Bachelor of Technology 
 
 **🔗 Live Site:** [subankar-dey.github.io/personal-portfolio](https://subankar-dey.github.io/personal-portfolio/)
 
+![Subankar Dey — Full Stack Developer & AI Engineer](public/og-banner.jpg)
+
 ---
 
 ## 📌 Features
@@ -16,6 +18,9 @@ This portfolio acts as a living resume while I pursue my Bachelor of Technology 
 - ✨ **Scroll-triggered animations** via a reusable `IntersectionObserver` hook, with `prefers-reduced-motion` support
 - 🔒 **Dynamic Contact Integration** securely wired with EmailJS for direct communication
 - 📁 **Modular component rendering** ensuring top-tier visual performance on both mobile and desktop screens
+- 🔍 **SEO-ready**: Open Graph & Twitter Card metadata, canonical URL, `robots.txt`, `sitemap.xml`, and a custom favicon set
+- 🖋️ **Self-hosted fonts** (Inter & Playfair Display via Fontsource) — no external font requests
+- 🖼️ **Custom visual assets**: social preview banner, hero background, and per-project thumbnails, all generated to match the brand's design tokens
 
 ---
 
@@ -53,7 +58,10 @@ npm install
 ```
 
 ### 3. Setup Environment Variables
-Before running the application, be sure to fill in your `.env` file credentials mapping your EmailJS keys and your social links:
+Copy `.env.example` to `.env` and fill in your EmailJS credentials and social links:
+```bash
+cp .env.example .env
+```
 ```env
 VITE_GITHUB_URL=your_github_url
 VITE_LINKEDIN_URL=your_linkedin_url
@@ -64,6 +72,7 @@ VITE_EMAILJS_SERVICE_ID=your_id
 VITE_EMAILJS_TEMPLATE_ID=your_template
 VITE_EMAILJS_PUBLIC_KEY=your_key
 ```
+The social link variables are optional — `src/constants/links.js` falls back to sensible defaults if they're unset. The EmailJS variables are required for the contact form to send messages.
 
 ### 4. Run the Project
 Start the development server:
@@ -95,6 +104,12 @@ This repo includes a GitHub Actions workflow (`.github/workflows/deploy.yml`) th
    ```
    https://subankar-dey.github.io/personal-portfolio/
    ```
+
+---
+
+## 📊 Recruiter Slide Deck
+
+A standalone, self-contained presentation for recruiters lives at [`slides/recruiter-deck.html`](slides/recruiter-deck.html) — 6 slides covering intro, technical profile, skills, featured projects, AI capabilities, and contact info, styled to match the site's design system. It's fully offline (fonts and images are bundled locally) and separate from the Vite build — just open the file directly in a browser. Use arrow keys, click, or the on-screen controls to navigate.
 
 ---
 
